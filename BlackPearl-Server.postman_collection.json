@@ -1,0 +1,898 @@
+{
+	"info": {
+		"_postman_id": "83a1c04a-685a-4f6d-8dc1-0eb1c9bf6deb",
+		"name": "BlackPearl-Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Front End",
+			"item": [
+				{
+					"name": "add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "a@a.com",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "abcd",
+									"type": "default"
+								},
+								{
+									"key": "phone",
+									"value": "+9234000",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "abcd@1234",
+									"type": "default"
+								},
+								{
+									"key": "country",
+									"value": "PK",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/adduser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"adduser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ab@a.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "abcd@1234",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MjU3MzAxLCJleHAiOjE2ODUyNjA5MDF9.H_YfacUWhH2KR1Gq88rO3zC4REPllPVV8Rvch1LTvCM",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/getInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change name/phone",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2ODUxNzE3MDksImV4cCI6MTY4NTE3NTMwOX0.u2D71jlT1ywWF_T-99qYeL4BRj1ABidcTCgNdLgmx3A",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attribute\":\"info\",\r\n    \"newvalue\":{\r\n        \"name\":\"abcdef\",\r\n        \"phone\":\"+9129090\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/updateAttribute",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"updateAttribute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2ODUxNzE3MDksImV4cCI6MTY4NTE3NTMwOX0.u2D71jlT1ywWF_T-99qYeL4BRj1ABidcTCgNdLgmx3A",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attribute\":\"password\",\r\n    \"newvalue\":{\r\n        \"oldpassword\":\"abcd@1234\",\r\n        \"newpassword\":\"abcd@1234\",\r\n        \"confirmpassword\":\"abcd@1234\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/updateAttribute",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"updateAttribute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2ODUxNzE3MDksImV4cCI6MTY4NTE3NTMwOX0.u2D71jlT1ywWF_T-99qYeL4BRj1ABidcTCgNdLgmx3A",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attribute\":\"email\",\r\n    \"newvalue\":{\r\n        \"password\":\"abcd@1234\",\r\n        \"email\":\"ab@a.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/updateAttribute",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"updateAttribute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Domain Scan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA5ODg1LCJleHAiOjE2ODUzMTM0ODV9.9JBZNV_fyXaifRFJXVcmELiIYjXJo0YzppTfFIhNB-o",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/deleteDomainScan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"deleteDomainScan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Scan History",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA2MDY1LCJleHAiOjE2ODUzMDk2NjV9.hTjetZr7uhqiLmGFKu7UxV0OUXuKfE8ZoVlEIU6KYLc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/getScanHistory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getScanHistory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Domain Scan Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA2MDY1LCJleHAiOjE2ODUzMDk2NjV9.hTjetZr7uhqiLmGFKu7UxV0OUXuKfE8ZoVlEIU6KYLc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/getDomainScanInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getDomainScanInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Domain Scan Subdomains",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA2MDY1LCJleHAiOjE2ODUzMDk2NjV9.hTjetZr7uhqiLmGFKu7UxV0OUXuKfE8ZoVlEIU6KYLc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/getDomainScanSubdomains",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getDomainScanSubdomains"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Domain Scan Vulnerabilities",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA2MDY1LCJleHAiOjE2ODUzMDk2NjV9.hTjetZr7uhqiLmGFKu7UxV0OUXuKfE8ZoVlEIU6KYLc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/getDomainScanVulnerabilities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getDomainScanVulnerabilities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get SubDomain Scan Vulnerabilities Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA2MDY1LCJleHAiOjE2ODUzMDk2NjV9.hTjetZr7uhqiLmGFKu7UxV0OUXuKfE8ZoVlEIU6KYLc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\",\r\n    \"subdomainname\":\"www.vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/getSubDomainScanVulnerabilities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getSubDomainScanVulnerabilities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get SubDomain Scan Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA2MDY1LCJleHAiOjE2ODUzMDk2NjV9.hTjetZr7uhqiLmGFKu7UxV0OUXuKfE8ZoVlEIU6KYLc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\",\r\n    \"subdomainname\":\"www.vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/getSubDomainScanInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getSubDomainScanInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get SubDomain Scan Ports",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA2MDY1LCJleHAiOjE2ODUzMDk2NjV9.hTjetZr7uhqiLmGFKu7UxV0OUXuKfE8ZoVlEIU6KYLc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\",\r\n    \"subdomainname\":\"www.vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/getSubDomainScanPorts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getSubDomainScanPorts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get SubDomain Scan URLs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiQGEuY29tIiwiYXBpS2V5IjoiYmxhY2stYnAtZzlZRDRQU3doRkJ0Qk83VjBvMEx3UGlJc3FLOFVUIiwiaWF0IjoxNjg1MzA2MDY1LCJleHAiOjE2ODUzMDk2NjV9.hTjetZr7uhqiLmGFKu7UxV0OUXuKfE8ZoVlEIU6KYLc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\",\r\n    \"subdomainname\":\"www.vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/getSubDomainScanURLs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getSubDomainScanURLs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vuln Scanner",
+			"item": [
+				{
+					"name": "Create a new Scan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/createVulnerabilityScan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"createVulnerabilityScan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subdomain Enumeration COmplete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"test.com\",\r\n    \"data\":{\"numberOfSubdomains\": 53, \"numberOfActiveSubdomains\": 1, \"array\": [{\"name\": \"account.swapfiets.com\", \"is_active\": true}, {\"name\": \"api.swapfiets.com\", \"is_active\": true}, {\"name\": \"app.swapfiets.com\", \"is_active\": false}, {\"name\": \"auth.swapfiets.com\", \"is_active\": false}, {\"name\": \"backoffice.swapfiets.com\", \"is_active\": true}, {\"name\": \"business.swapfiets.com\", \"is_active\": true}, {\"name\": \"code.swapfiets.com\", \"is_active\": false}, {\"name\": \"dev.backoffice.swapfiets.com\", \"is_active\": false}, {\"name\": \"eduscho.swapfiets.com\", \"is_active\": true}, {\"name\": \"fb-capi.swapfiets.com\", \"is_active\": true}, {\"name\": \"fiets-depot.swapfiets.com\", \"is_active\": true}, {\"name\": \"forms.swapfiets.com\", \"is_active\": true}, {\"name\": \"frontend.swapfiets.com\", \"is_active\": true}, {\"name\": \"hok-frontend.swapfiets.com\", \"is_active\": true}, {\"name\": \"hok.swapfiets.com\", \"is_active\": true}, {\"name\": \"identity.swapfiets.com\", \"is_active\": true}, {\"name\": \"idp.swapfiets.com\", \"is_active\": true}, {\"name\": \"internal.swapfiets.com\", \"is_active\": false}, {\"name\": \"intranet.swapfiets.com\", \"is_active\": true}, {\"name\": \"introweeks.swapfiets.com\", \"is_active\": true}, {\"name\": \"jobs.swapfiets.com\", \"is_active\": true}, {\"name\": \"live.account.swapfiets.com\", \"is_active\": false}, {\"name\": \"miniapps.swapfiets.com\", \"is_active\": true}, {\"name\": \"missioncontrol.swapfiets.com\", \"is_active\": true}, {\"name\": \"monitoring.swapfiets.com\", \"is_active\": false}, {\"name\": \"move.swapfiets.com\", \"is_active\": true}, {\"name\": \"news.swapfiets.com\", \"is_active\": true}, {\"name\": \"partner.swapfiets.com\", \"is_active\": true}, {\"name\": \"parts.swapfiets.com\", \"is_active\": false}, {\"name\": \"pay.swapfiets.com\", \"is_active\": true}, {\"name\": \"plan.swapfiets.com\", \"is_active\": true}, {\"name\": \"prometheus.swapfiets.com\", \"is_active\": false}, {\"name\": \"promo.swapfiets.com\", \"is_active\": false}, {\"name\": \"release-gate.swapfiets.com\", \"is_active\": true}, {\"name\": \"smooth-hok.swapfiets.com\", \"is_active\": true}, {\"name\": \"staging.backoffice.swapfiets.com\", \"is_active\": false}, {\"name\": \"staging.swapfiets.com\", \"is_active\": false}, {\"name\": \"status.swapfiets.com\", \"is_active\": true}, {\"name\": \"sustainability.swapfiets.com\", \"is_active\": true}, {\"name\": \"swapbot.swapfiets.com\", \"is_active\": false}, {\"name\": \"swapfiets-bot.swapfiets.com\", \"is_active\": true}, {\"name\": \"swapfiets-members-identity-okta.swapfiets.com\", \"is_active\": true}, {\"name\": \"swapfiets-messenger.swapfiets.com\", \"is_active\": true}, {\"name\": \"swapfiets-okta-provisioner.swapfiets.com\", \"is_active\": true}, {\"name\": \"swapfiets.com\", \"is_active\": true}, {\"name\": \"swearch-ui.swapfiets.com\", \"is_active\": true}, {\"name\": \"swearch.swapfiets.com\", \"is_active\": false}, {\"name\": \"teamjumbo-visma.swapfiets.com\", \"is_active\": true}, {\"name\": \"voucher.swapfiets.com\", \"is_active\": false}, {\"name\": \"wienerlinien.swapfiets.com\", \"is_active\": false}, {\"name\": \"work.swapfiets.com\", \"is_active\": true}, {\"name\": \"www.swapfiets.com\", \"is_active\": true}, {\"name\": \"www2.swapfiets.com\", \"is_active\": false}]}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/subdomainsEnumerated",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"subdomainsEnumerated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Subdomain Scan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"test.com\",\r\n    \"subdomainname\":\"test.test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/subdomainScanInitiated",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"subdomainScanInitiated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PortScan Complete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"test.com\",\r\n    \"subdomainname\":\"test.test.com\",\r\n    \"data\":{\"numberOfRunningPorts\": 1, \"array\": [{\"port\": 80, \"service\": \"http\", \"url\": \"http://www.vulnweb.com\"}]}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/portScan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"portScan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DirBrute Complete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"test.com\",\r\n    \"subdomainname\":\"test.test.com\",\r\n    \"data\":{\"numberOfURLs\": 66, \"array\": [{\"url\": \"http://www.vulnweb.com\", \"method\": \"GET\", \"status\": 200}, {\"url\": \"http://www.vulnweb.com/index.html\", \"method\": \"GET\", \"status\": 200}, {\"url\": \"http://www.vulnweb.com/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd\", \"method\": \"GET\", \"status\": 400}, {\"url\": \"http://www.vulnweb.com/cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd\", \"method\": \"GET\", \"status\": 400}, {\"url\": \"http://www.vulnweb.com/%2e%2e//google.com\", \"method\": \"GET\", \"status\": 400}, {\"url\": \"http://vulnweb.com:80/\", \"method\": \"GET\", \"status\": 200}, {\"url\": \"http://vulnweb.com:80/2012/09/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/2012/09/24/hello-world/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/2012/09/24/hello-world/feed/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/2012/09/24/hello-world/?replytocom=1\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com/2014/04/get-freedownloadidm517patchkeygen-program.html\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/?p=1\", \"method\": \"GET\", \"status\": 200}, {\"url\": \"http://www.vulnweb.com/?ref=hackernoon.com\", \"method\": \"GET\", \"status\": 200}, {\"url\": \"http://www.vulnweb.com/?rev=23\", \"method\": \"GET\", \"status\": 200}, {\"url\": \"http://vulnweb.com/account.php?id=1\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/admin\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/ads.txt\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/artists.php?\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/artists.php?artist=3\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/author/admin/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/author/admin/feed/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/category/uncategorized/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/category/uncategorized/feed/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/comments/feed/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/favicon.ico\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/feed/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/hackpanel\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/home\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com/https://torproject.org/https://en.wikipedia.org/wiki/.onionhttps://security.stackexchange.com/questions/78682/https://www.torproject.org/projects/torbrowser.html.enhttps://tails.boum.org/https://www.whonix.org/https://www.whonix.org/wiki/virtualboxhttps://www.virtualbox.org/https://www.whonix.org/wiki/downloadhttps://panopticlick.eff.org/http://maill4dnx45yrtsy.onion/https://www.torproject.org/docs/hidden-services.html.enhttps://security.stackexchange.com/questions/79438/https://en.wikipedia.org/wiki/forward_secrecyhttps://en.wikipedia.org/wiki/off-the-record_messaginghttps://whispersystems.org/blog/asynchronous-security/https://f5.com/glossary/ssl-offloadinghttp://en.wikipedia.org/wiki/ssl_accelerationhttp://nginx.com/blog/nginx-ssl/http://www.pcgamer.com/dota-2-esports-league-suspended-after-players-hit-by-ddos-attacks/https://security.stackexchange.com/a/79363/12https://security.stackexchange.com/a/31846/39623https://hashcat.net/oclhashcat/https://security.stackexchange.com/a/51080/39623https://www.ietf.org/rfc/rfc2898.txthttps://www.ietf.org/rfc/rfc2104.txthttps://hashcat.net/oclhashcat/https://hashcat.net/wiki/doku.php?id=rule_based_attackhttps://hashcat.net/wiki/doku.php?id=dictionary_attackhttps://security.stackexchange.com/a/7701/39623https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/http://hynek.mehttp://wiki.apache.org/tomcat/howto/sslciphershttp://markmail.org/message/zn4namfhypyxum23https://security.stackexchange.com/a/77018/39623http://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-52r1.pdfhttps://ssllabs.comhttp://webstersprodigy.net/2012/02/04/serving-back-xml-for-xss/http://azure.microsoft.com/en-us/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/index.php\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/listproducts.php?\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/login.php\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com/mobile/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/myimages.php\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://http://www.vulnweb.com/news/story/0ap2000000266504/article/bill-belichick-disagrees-with-penalty-call-in-pats-loss\", \"method\": \"GET\", \"status\": 200}, {\"url\": \"http://www.vulnweb.com/news/story/0ap3000000944680/article/ravens-activate-guard-marshal-yanda-from-pup-list\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://http://www.vulnweb.com/news/story/0ap3000000944702/article/irsay-colts-wouldnt-trade-brissett-for-firstround-pick\", \"method\": \"GET\", \"status\": 200}, {\"url\": \"http://www.vulnweb.com:80/plugins/seo\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/premier-edition-bundle\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/redir.php?r=http://strategicgrowthexperts.com/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/robots.txt\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/sample-page/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/sample-page/feed/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/showforum.asp?\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:/static.nfl.com/content/catch_all/nfl_image\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/t/fit.txt\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/updateif.php\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:80/updateif.php%e2%80%9d&\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com/usr/themes/lanstar-master/assets/js/gazeimg.js\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com/usr/themes/lanstar-master/assets/js/lanstarapp.js\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com/usr/themes/lanstar-master/assets/js/page.js\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/wp-admin\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/wp-comments-post.php\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/wp-content/themes/twentyeleven/js/html5.js\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/wp-includes/js/comment-reply.min.js?ver=2925\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/wp-includes/js/jquery/jquery.js?ver=1.8.3\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com/wp-includes/wlwmanifest.xml\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/wp-login.php\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:/www.amazon.com/dp/b00fjrs73g/ref=as_li_ss_tl\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:/www.cnet.com/how-to/how-to-fix-a-windows-10-laptop-thats-plugged-in-but-not-charging/\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:/www.foxnews.com/archive/author/kt-mcfarland\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:/www.nfl.com/news/story/0ap2000000266574/comments/jermichael-finley-leaves-on-strecher-with-neck-injury\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://www.vulnweb.com:/www.nfl.com/news/story/0ap3000000944702/article/irsay-colts-wouldnt-trade-brissett-for-firstround-pick\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/xmlrpc.php\", \"method\": \"GET\", \"status\": 404}, {\"url\": \"http://vulnweb.com:80/xmlrpc.php?rsd\", \"method\": \"GET\", \"status\": 404}]}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/dirBrute",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"dirBrute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Vulnerability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\",\r\n    \"subdomainname\":\"www.vulnweb.com\",\r\n    \"data\":{\"subdomainname\":\"www.vulnweb.com\", \"url\": {\"url\": \"https://stela20.nn.cz/package.json\", \"method\": \"GET\", \"status\": 200}, \"vulnerability_name\": \"Host Header Injection\", \"vulnerability_id\": 1, \"severity\": \"Low\", \"Payload\": {\"Host\": \"beret.com\"}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/addVulnerability",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"addVulnerability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Go to Next Vulnerability to Scan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"test.com\",\r\n    \"vulnerability_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/switchVulnerability",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"switchVulnerability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete Subdomain Scan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"test.com\",\r\n    \"subdomainname\":\"test.test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/completeSubdomainScan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"completeSubdomainScan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete Domain Scan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bpEmail",
+								"value": "ab@a.com",
+								"type": "default"
+							},
+							{
+								"key": "bpAPIKey",
+								"value": "black-bp-g9YD4PSwhFBtBO7V0o0LwPiIsqK8UT",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domainname\":\"vulnweb.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vulnscan/completeDomainScan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vulnscan",
+								"completeDomainScan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
